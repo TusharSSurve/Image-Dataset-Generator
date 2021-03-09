@@ -748,35 +748,6 @@
      </widget>
     </widget>
    </widget>
-   <widget class="QScrollArea" name="scrollArea">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>620</y>
-      <width>841</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="widgetResizable">
-     <bool>true</bool>
-    </property>
-    <widget class="QWidget" name="scrollAreaWidgetContents">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>839</width>
-       <height>79</height>
-      </rect>
-     </property>
-    </widget>
-   </widget>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
@@ -861,6 +832,16 @@
       <string>Select Dataset Folder:-</string>
      </property>
     </widget>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>620</y>
+      <width>841</width>
+      <height>87</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

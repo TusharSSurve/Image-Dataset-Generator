@@ -164,6 +164,8 @@ class Ui_MainWindow(object):
         self.lineEdit_8.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.lineEdit_8.setText('./generated_images')
         self.lineEdit_8.setObjectName("lineEdit_8")
+        self.lineEdit_8.textChanged.connect(self.validation_1)
+        self.lineEdit_8.setDisabled(True)
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_5)
         self.pushButton_2.setGeometry(QtCore.QRect(230, 120, 161, 41))
         font = QtGui.QFont()
@@ -174,6 +176,7 @@ class Ui_MainWindow(object):
         self.pushButton_2.setFlat(False)
         self.pushButton_2.clicked.connect(self.getFolder_1)
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.setDisabled(True)
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_5)
         self.pushButton_3.setGeometry(QtCore.QRect(240, 200, 93, 31))
         self.pushButton_3.setObjectName("pushButton_3")
@@ -182,16 +185,13 @@ class Ui_MainWindow(object):
         self.pushButton_4.setGeometry(QtCore.QRect(340, 200, 93, 31))
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_4.clicked.connect(self.Cancel)
-        self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
-        self.scrollArea.setGeometry(QtCore.QRect(20, 620, 841, 81))
-        self.scrollArea.setAutoFillBackground(False)
-        self.scrollArea.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 839, 79))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit.setReadOnly(True)
+        self.plainTextEdit.setPlainText("")
+        self.plainTextEdit.setTabStopWidth(4)
+        self.plainTextEdit.setMaximumBlockCount(0)
+        self.plainTextEdit.setGeometry(QtCore.QRect(20, 620, 841, 87))
+        self.plainTextEdit.setObjectName("plainTextEdit")
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(20, 20, 841, 81))
         self.frame_2.setFrameShape(QtWidgets.QFrame.Box)
@@ -214,6 +214,7 @@ class Ui_MainWindow(object):
         self.lineEdit.setFont(font)
         self.lineEdit.setText("")
         self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit.textChanged.connect(self.validation)
         self.label_11 = QtWidgets.QLabel(self.frame_2)
         self.label_11.setGeometry(QtCore.QRect(10, 0, 171, 31))
         font = QtGui.QFont()
@@ -264,6 +265,9 @@ class Ui_MainWindow(object):
             msg.exec_()
         else:
             self.lineEdit.setText(foo_dir)
+            self.pushButton.setDisabled(True)
+            self.pushButton_2.setDisabled(False)
+            self.lineEdit_8.setDisabled(False)
 
     def getFolder_1(self):
         dialog = QFileDialog()
@@ -280,6 +284,8 @@ class Ui_MainWindow(object):
     def Apply(self):
         self.pushButton_3.setDisabled(True)
         self.pushButton_4.setDisabled(False)
+        self.plainTextEdit.appendPlainText('Hello')
+        self.plainTextEdit.appendPlainText('Hello')
         print(self.lineEdit_2.text())
         print(self.lineEdit_3.text())
         print(self.lineEdit_4.text())
@@ -290,6 +296,17 @@ class Ui_MainWindow(object):
     def Cancel(self):
         self.pushButton_3.setDisabled(False)
         self.pushButton_4.setDisabled(True)
+
+    def validation(self):
+        if self.lineEdit.text()=='':
+            self.pushButton.setDisabled(False)
+            self.pushButton_2.setDisabled(True)
+            self.lineEdit_8.setDisabled(True)
+
+    def validation_1(self):
+        if self.lineEdit_8.text()=='':
+            self.lineEdit_8.setText('./generated_images')
+            self.pushButton.setDisabled(False)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
