@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>887</width>
-    <height>790</height>
+    <height>765</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>887</width>
-    <height>790</height>
+    <height>765</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -73,6 +73,12 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>Boolean. Randomly flip inputs vertically.</string>
+      </property>
+      <property name="statusTip">
+       <string>Boolean. Randomly flip inputs vertically.</string>
+      </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boolean. Randomly flip inputs vertically.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -92,6 +98,12 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>Boolean. Set input mean to 0 over the dataset, feature-wise.</string>
+      </property>
+      <property name="statusTip">
+       <string>Boolean. Set input mean to 0 over the dataset, feature-wise.</string>
+      </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boolean. Set input mean to 0 over the dataset, feature-wise.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -108,6 +120,12 @@
         <height>41</height>
        </rect>
       </property>
+      <property name="toolTip">
+       <string>Boolean. Apply ZCA whitening.</string>
+      </property>
+      <property name="statusTip">
+       <string>Boolean. Apply ZCA whitening.</string>
+      </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boolean. Apply ZCA whitening.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -123,6 +141,12 @@
         <width>161</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boolean. Randomly flip inputs horizontally.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Boolean. Randomly flip inputs horizontally.</string>
       </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Boolean. Randomly flip inputs horizontally.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -165,6 +189,15 @@
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:&lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-width_shift_range +width_shift_range)[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;width_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:(-width_shift_range +width_shift_range)[-1, 0, +1], while with width_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:&lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-width_shift_range +width_shift_range)[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;width_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
@@ -189,8 +222,14 @@
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval &lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-height_shift_range, +height_shift_range)[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;height_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval (-height_shift_range, +height_shift_range)[-1, 0, +1], while with height_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).(Float)</string>
+      </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float: fraction of total height, if &amp;lt; 1, or pixels if &amp;gt;= 1. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval &lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-height_shift_range, +height_shift_range)&lt;/span&gt; - With &lt;span style=&quot; font-family:'Courier New';&quot;&gt;height_shift_range=2&lt;/span&gt; possible values are integers &lt;span style=&quot; font-family:'Courier New';&quot;&gt;[-1, 0, +1]&lt;/span&gt;, same as with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;height_shift_range=[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;height_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval &lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-height_shift_range, +height_shift_range)[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;height_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="text">
        <string>Height Shift Range:-</string>
@@ -213,8 +252,14 @@
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:&lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-width_shift_range +width_shift_range)[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;width_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int:(-width_shift_range +width_shift_range)[-1, 0, +1], while with width_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).</string>
+      </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float: fraction of total width, if &amp;lt; 1, or pixels if &amp;gt;= 1. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval &lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-width_shift_range, +width_shift_range)&lt;/span&gt; - With &lt;span style=&quot; font-family:'Courier New';&quot;&gt;width_shift_range=2&lt;/span&gt; possible values are integers &lt;span style=&quot; font-family:'Courier New';&quot;&gt;[-1, 0, +1]&lt;/span&gt;, same as with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;width_shift_range=[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;width_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:&lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-width_shift_range +width_shift_range)[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;width_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="text">
        <string>Width Shift Range:-</string>
@@ -236,6 +281,12 @@
       </property>
       <property name="mouseTracking">
        <bool>true</bool>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Value used for points outside the boundaries when &lt;span style=&quot; font-family:'Courier New';&quot;&gt;fill_mode = &amp;quot;constant&amp;quot;&lt;/span&gt;. (Float or Int) &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Value used for points outside the boundaries when fill_mode = &quot;constant&quot;. (Float or Int) </string>
       </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Value used for points outside the boundaries when &lt;span style=&quot; font-family:'Courier New';&quot;&gt;fill_mode = &amp;quot;constant&amp;quot;&lt;/span&gt;. (Float or Int) &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -261,8 +312,14 @@
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;One of {&amp;quot;constant&amp;quot;, &amp;quot;nearest&amp;quot;, &amp;quot;reflect&amp;quot; or &amp;quot;wrap&amp;quot;}. Default is 'nearest'. Points outside the boundaries of the input are filled according to the given mode: - 'constant': kkkkkkkk|abcd|kkkkkkkk (cval=k) - 'nearest': aaaaaaaa|abcd|dddddddd - 'reflect': abcddcba|abcd|dcbaabcd - 'wrap': abcdabcd|abcd|abcdabcd&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>One of {&quot;constant&quot;, &quot;nearest&quot;, &quot;reflect&quot; or &quot;wrap&quot;}. Default is 'nearest'. Points outside the boundaries of the input are filled according to the given mode: - 'constant': kkkkkkkk|abcd|kkkkkkkk (cval=k) - 'nearest': aaaaaaaa|abcd|dddddddd - 'reflect': abcddcba|abcd|dcbaabcd - 'wrap': abcdabcd|abcd|abcdabcd</string>
+      </property>
       <property name="whatsThis">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Float or [lower, upper]. Range for random zoom. If a float, &lt;span style=&quot; font-family:'Courier New';&quot;&gt;[lower, upper] = [1-zoom_range, 1+zoom_range]&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;One of {&amp;quot;constant&amp;quot;, &amp;quot;nearest&amp;quot;, &amp;quot;reflect&amp;quot; or &amp;quot;wrap&amp;quot;}. Default is 'nearest'. Points outside the boundaries of the input are filled according to the given mode: - 'constant': kkkkkkkk|abcd|kkkkkkkk (cval=k) - 'nearest': aaaaaaaa|abcd|dddddddd - 'reflect': abcddcba|abcd|dcbaabcd - 'wrap': abcdabcd|abcd|abcdabcd&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="text">
        <string>Fill Mode:-</string>
@@ -279,6 +336,15 @@
       </property>
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Float or [lower, upper]. Range for random zoom. If a float, &lt;span style=&quot; font-family:'Courier New';&quot;&gt;[lower, upper] = [1-zoom_range, 1+zoom_range]&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range].</string>
+      </property>
+      <property name="whatsThis">
+       <string>Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range].</string>
       </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
@@ -304,6 +370,12 @@
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Float or [lower, upper]. Range for random zoom. If a float, &lt;span style=&quot; font-family:'Courier New';&quot;&gt;[lower, upper] = [1-zoom_range, 1+zoom_range]&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range].</string>
+      </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Float or [lower, upper]. Range for random zoom. If a float, &lt;span style=&quot; font-family:'Courier New';&quot;&gt;[lower, upper] = [1-zoom_range, 1+zoom_range]&lt;/span&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -328,6 +400,12 @@
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)</string>
+      </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -346,6 +424,15 @@
       </property>
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)</string>
+      </property>
+      <property name="whatsThis">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
@@ -396,6 +483,12 @@
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval &lt;span style=&quot; font-family:'Courier New';&quot;&gt;(-height_shift_range, +height_shift_range)[-1, 0, +1]&lt;/span&gt;, while with &lt;span style=&quot; font-family:'Courier New';&quot;&gt;height_shift_range=1.0&lt;/span&gt; possible values are floats in the interval [-1.0, +1.0).(Float)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval (-height_shift_range, +height_shift_range)[-1, 0, +1], while with height_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).(Float)</string>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
@@ -420,6 +513,12 @@
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
+      <property name="toolTip">
+       <string>Degree range for random rotations.(Integer)</string>
+      </property>
+      <property name="statusTip">
+       <string>Degree range for random rotations.(Integer)</string>
+      </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Degree range for random rotations.(Integer)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -439,6 +538,12 @@
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Value used for points outside the boundaries when &lt;span style=&quot; font-family:'Courier New';&quot;&gt;fill_mode = &amp;quot;constant&amp;quot;&lt;/span&gt;. (Float or Int) &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Value used for points outside the boundaries when fill_mode = &quot;constant&quot;. (Float or Int) </string>
+      </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
       </property>
@@ -457,6 +562,12 @@
       </property>
       <property name="cursor">
        <cursorShape>ArrowCursor</cursorShape>
+      </property>
+      <property name="toolTip">
+       <string>Degree range for random rotations.(Integer)</string>
+      </property>
+      <property name="statusTip">
+       <string>Degree range for random rotations.(Integer)</string>
       </property>
       <property name="layoutDirection">
        <enum>Qt::RightToLeft</enum>
@@ -481,22 +592,6 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QDialogButtonBox" name="buttonBox">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>190</y>
-        <width>201</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="standardButtons">
-       <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel</set>
-      </property>
-      <property name="centerButtons">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
@@ -514,6 +609,12 @@
       <property name="mouseTracking">
        <bool>true</bool>
       </property>
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Range from 1 to 50. Default 10&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="statusTip">
+       <string>Range from 1 to 50. Default 10</string>
+      </property>
       <property name="whatsThis">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Range from 1 to 50. Default 10&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
@@ -529,6 +630,15 @@
         <width>61</width>
         <height>31</height>
        </rect>
+      </property>
+      <property name="toolTip">
+       <string>Range from 1 to 50. Default 10</string>
+      </property>
+      <property name="statusTip">
+       <string>Range from 1 to 50. Default 10</string>
+      </property>
+      <property name="whatsThis">
+       <string>Range from 1 to 50. Default 10</string>
       </property>
       <property name="minimum">
        <number>1</number>
@@ -608,6 +718,32 @@
       </property>
       <property name="flat">
        <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>200</y>
+        <width>93</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Apply</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>200</y>
+        <width>93</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cancel</string>
       </property>
      </widget>
     </widget>
@@ -725,31 +861,6 @@
       <string>Select Dataset Folder:-</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>710</y>
-      <width>841</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="lineWidth">
-     <number>1</number>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-    <property name="scaledContents">
-     <bool>false</bool>
-    </property>
-    <property name="wordWrap">
-     <bool>true</bool>
-    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
