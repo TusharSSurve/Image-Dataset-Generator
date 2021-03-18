@@ -32,7 +32,7 @@
       <x>20</x>
       <y>110</y>
       <width>841</width>
-      <height>501</height>
+      <height>481</height>
      </rect>
     </property>
     <property name="font">
@@ -53,9 +53,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>250</y>
+       <y>240</y>
        <width>361</width>
-       <height>241</height>
+       <height>231</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -165,7 +165,7 @@
        <x>10</x>
        <y>10</y>
        <width>821</width>
-       <height>231</height>
+       <height>221</height>
       </rect>
      </property>
      <property name="focusPolicy">
@@ -269,7 +269,7 @@
       <property name="geometry">
        <rect>
         <x>630</x>
-        <y>185</y>
+        <y>175</y>
         <width>51</width>
         <height>31</height>
        </rect>
@@ -530,7 +530,7 @@
       <property name="geometry">
        <rect>
         <x>690</x>
-        <y>180</y>
+        <y>170</y>
         <width>113</width>
         <height>41</height>
        </rect>
@@ -581,9 +581,9 @@
      <property name="geometry">
       <rect>
        <x>380</x>
-       <y>250</y>
+       <y>240</y>
        <width>451</width>
-       <height>241</height>
+       <height>231</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -724,7 +724,7 @@
       <property name="geometry">
        <rect>
         <x>240</x>
-        <y>200</y>
+        <y>190</y>
         <width>93</width>
         <height>31</height>
        </rect>
@@ -737,7 +737,7 @@
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>200</y>
+        <y>190</y>
         <width>93</width>
         <height>31</height>
        </rect>
@@ -837,10 +837,50 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>620</y>
+      <y>640</y>
       <width>841</width>
-      <height>87</height>
+      <height>81</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>600</y>
+      <width>721</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>1000</number>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="format">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>600</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Total Progress:-</string>
     </property>
    </widget>
   </widget>

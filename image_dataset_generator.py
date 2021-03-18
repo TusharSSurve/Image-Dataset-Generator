@@ -9,11 +9,11 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(887, 765)
         MainWindow.setMinimumSize(QtCore.QSize(887, 765))
-        MainWindow.setMaximumSize(QtCore.QSize(887, 765))
+        MainWindow.setMaximumSize(QtCore.QSize(887, 790))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(20, 110, 841, 501))
+        self.frame.setGeometry(QtCore.QRect(20, 110, 841, 481))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.frame.setFont(font)
@@ -22,7 +22,7 @@ class Ui_MainWindow(object):
         self.frame.setLineWidth(1)
         self.frame.setObjectName("frame")
         self.frame_4 = QtWidgets.QFrame(self.frame)
-        self.frame_4.setGeometry(QtCore.QRect(10, 250, 361, 241))
+        self.frame_4.setGeometry(QtCore.QRect(10, 240, 361, 231))
         self.frame_4.setFrameShape(QtWidgets.QFrame.Box)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
@@ -41,7 +41,7 @@ class Ui_MainWindow(object):
         self.checkBox_3.setChecked(True)
         self.checkBox_3.setObjectName("checkBox_3")
         self.frame_3 = QtWidgets.QFrame(self.frame)
-        self.frame_3.setGeometry(QtCore.QRect(10, 10, 821, 231))
+        self.frame_3.setGeometry(QtCore.QRect(10, 10, 821, 221))
         self.frame_3.setFocusPolicy(QtCore.Qt.ClickFocus)
         self.frame_3.setFrameShape(QtWidgets.QFrame.Box)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
         self.label_5.setMouseTracking(True)
         self.label_5.setObjectName("label_5")
         self.label_3 = QtWidgets.QLabel(self.frame_3)
-        self.label_3.setGeometry(QtCore.QRect(630, 185, 51, 31))
+        self.label_3.setGeometry(QtCore.QRect(630, 175, 51, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_3.setFont(font)
@@ -124,9 +124,10 @@ class Ui_MainWindow(object):
         self.label_2.setMouseTracking(True)
         self.label_2.setObjectName("label_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.frame_3)
-        self.lineEdit_3.setGeometry(QtCore.QRect(690, 180, 113, 41))
+        self.lineEdit_3.setGeometry(QtCore.QRect(690, 170, 113, 41))
         self.lineEdit_3.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.lineEdit_3.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.lineEdit_3.setDisabled(True)
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.lineEdit_2 = QtWidgets.QLineEdit(self.frame_3)
         self.lineEdit_2.setGeometry(QtCore.QRect(150, 30, 113, 41))
@@ -134,7 +135,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.frame_5 = QtWidgets.QFrame(self.frame)
-        self.frame_5.setGeometry(QtCore.QRect(380, 250, 451, 241))
+        self.frame_5.setGeometry(QtCore.QRect(380, 240, 451, 231))
         self.frame_5.setFrameShape(QtWidgets.QFrame.Box)
         self.frame_5.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_5.setObjectName("frame_5")
@@ -162,9 +163,10 @@ class Ui_MainWindow(object):
         self.lineEdit_8.setGeometry(QtCore.QRect(180, 75, 261, 41))
         self.lineEdit_8.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.lineEdit_8.setLayoutDirection(QtCore.Qt.RightToLeft)
-        self.lineEdit_8.setText('./generated_images')
+        self.lineEdit_8.setText("")
         self.lineEdit_8.setObjectName("lineEdit_8")
         self.lineEdit_8.textChanged.connect(self.validation_1)
+        self.lineEdit_8.setText('./generated_images')
         self.lineEdit_8.setDisabled(True)
         self.pushButton_2 = QtWidgets.QPushButton(self.frame_5)
         self.pushButton_2.setGeometry(QtCore.QRect(230, 120, 161, 41))
@@ -174,24 +176,18 @@ class Ui_MainWindow(object):
         self.pushButton_2.setAutoDefault(False)
         self.pushButton_2.setDefault(False)
         self.pushButton_2.setFlat(False)
-        self.pushButton_2.clicked.connect(self.getFolder_1)
         self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_2.clicked.connect(self.getFolder_1)
         self.pushButton_2.setDisabled(True)
         self.pushButton_3 = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton_3.setGeometry(QtCore.QRect(240, 200, 93, 31))
+        self.pushButton_3.setGeometry(QtCore.QRect(240, 190, 93, 31))
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_3.clicked.connect(self.Apply)
         self.pushButton_4 = QtWidgets.QPushButton(self.frame_5)
-        self.pushButton_4.setGeometry(QtCore.QRect(340, 200, 93, 31))
+        self.pushButton_4.setGeometry(QtCore.QRect(340, 190, 93, 31))
         self.pushButton_4.setObjectName("pushButton_4")
         self.pushButton_4.clicked.connect(self.Cancel)
-        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setReadOnly(True)
-        self.plainTextEdit.setPlainText("")
-        self.plainTextEdit.setTabStopWidth(4)
-        self.plainTextEdit.setMaximumBlockCount(0)
-        self.plainTextEdit.setGeometry(QtCore.QRect(20, 620, 841, 87))
-        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.pushButton_4.setDisabled(True)
         self.frame_2 = QtWidgets.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(20, 20, 841, 81))
         self.frame_2.setFrameShape(QtWidgets.QFrame.Box)
@@ -222,13 +218,25 @@ class Ui_MainWindow(object):
         self.label_11.setFont(font)
         self.label_11.setMouseTracking(True)
         self.label_11.setObjectName("label_11")
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit.setGeometry(QtCore.QRect(20, 640, 841, 81))
+        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.plainTextEdit.setReadOnly(True)
+        self.plainTextEdit.setPlainText("")
+        self.plainTextEdit.setTabStopWidth(4)
+        self.plainTextEdit.setMaximumBlockCount(0)
+        self.progressBar = QtWidgets.QProgressBar(self.centralwidget)
+        self.progressBar.setGeometry(QtCore.QRect(140, 600, 721, 31))
+        self.progressBar.setMaximum(1000)
+        self.progressBar.setProperty("value", 0)
+        self.progressBar.setAlignment(QtCore.Qt.AlignCenter)
+        self.progressBar.setFormat("")
+        self.progressBar.setObjectName("progressBar")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(20, 710, 841, 31))
-        self.label.setLineWidth(1)
-        self.label.setText("")
-        self.label.setTextFormat(QtCore.Qt.AutoText)
-        self.label.setScaledContents(False)
-        self.label.setWordWrap(True)
+        self.label.setGeometry(QtCore.QRect(20, 600, 111, 31))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.label.setFont(font)
         self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -247,10 +255,18 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+    
+    def Message(self,text):
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Warning)
+        msg.setText(text)
+        msg.setWindowTitle("Warning")
+        msg.exec_()
 
     def combo(self):
-        if str(self.comboBox.currentText())=='Constant':
+        if str(self.comboBox.currentText())!='Constant':
             self.lineEdit_3.setDisabled(True)
+            self.lineEdit_3.setText('0.0')
         else:
             self.lineEdit_3.setDisabled(False)
 
@@ -258,40 +274,124 @@ class Ui_MainWindow(object):
         dialog = QFileDialog()
         foo_dir = dialog.getExistingDirectory(None,'Select a directory',os.getcwd())
         if foo_dir=='':
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Warning)
-            msg.setText("Please select Dataset folder!")
-            msg.setWindowTitle("Warning")
-            msg.exec_()
+            self.Message("Please select Dataset folder!")
         else:
             self.lineEdit.setText(foo_dir)
             self.pushButton.setDisabled(True)
             self.pushButton_2.setDisabled(False)
             self.lineEdit_8.setDisabled(False)
+            self.lineEdit_8.setText(self.lineEdit_8.text()+'/'+self.lineEdit.text().split('/')[-1])
 
     def getFolder_1(self):
         dialog = QFileDialog()
         foo_dir = dialog.getExistingDirectory(None,'Select a directory',os.getcwd())
         if foo_dir=='':
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Warning)
-            msg.setText("Please select Dataset folder!")
-            msg.setWindowTitle("Warning")
-            msg.exec_()
+            self.Message("Please select Dataset folder!")
         else:
             self.lineEdit_8.setText(foo_dir+'/'+self.lineEdit.text().split('/')[-1])
+
+    
 
     def Apply(self):
         self.pushButton_3.setDisabled(True)
         self.pushButton_4.setDisabled(False)
-        self.plainTextEdit.appendPlainText('Hello')
-        self.plainTextEdit.appendPlainText('Hello')
-        print(self.lineEdit_2.text())
-        print(self.lineEdit_3.text())
-        print(self.lineEdit_4.text())
-        print(self.lineEdit_5.text())
-        print(self.lineEdit_6.text())
-        print(self.lineEdit_7.text())
+
+        self.progressBar.setMaximum(100)
+        self.progressBar.setFormat("%p%, %v/%m")
+        self.progressBar.setValue(0)
+
+        if not os.path.isdir('generated_images'):
+            os.mkdir('generated_images')
+
+        # for i in range(1,10001):
+        #     self.progressBar.setMaximum(10000)
+        #     self.progressBar.setFormat("%p%, %v/%m")
+        #     self.progressBar.setValue(i)
+        # self.plainTextEdit.appendPlainText('Hello')
+        if self.lineEdit.text()!='':
+            if os.path.isdir(self.lineEdit.text()):
+                try:
+                    rotate_range =  int(self.lineEdit_2.text())
+                except ValueError:
+                    self.Message("Please specify correct Rotate Range value!")
+                    return
+
+                try:
+                    shear_range =  float(self.lineEdit_7.text())
+                except ValueError:
+                    self.Message("Please specify correct Shear Range value!")
+                    return
+
+                try:
+                    cval = int(self.lineEdit_3.text())
+                except ValueError:
+                    try:
+                        cval = float(self.lineEdit_3.text())
+                    except ValueError:
+                        self.Message("Please specify correct CVal!")
+                        return
+                
+                try:
+                    width_shift_range = int(self.lineEdit_5.text())
+                except ValueError:
+                    try:
+                        width_shift_range = float(self.lineEdit_5.text())
+                    except ValueError:
+                        try:
+                            width_shift_range = [int(i) for i in self.lineEdit_5.text().split(',')]
+                        except ValueError:
+                            self.Message("Please specify correct Width Shift Range!")
+                            return
+
+                try:
+                    height_shift_range = int(self.lineEdit_6.text())
+                except ValueError:
+                    try:
+                        height_shift_range = float(self.lineEdit_6.text())
+                    except ValueError:
+                        try:
+                            height_shift_range = [int(i) for i in self.lineEdit_6.text().split(',')]
+                        except ValueError:
+                            self.Message("Please specify correct Height Shift Range!")
+                            return
+
+                try:
+                    zoom_range = float(self.lineEdit_4.text())
+                except ValueError:
+                    try:
+                        zoom_range = [int(i) for i in self.lineEdit_4.text().split(',')]
+                        if len(zoom_range)==2:
+                            pass
+                        else:
+                            self.Message('Please specify upper and lower limit only!')
+                            return
+                    except ValueError:
+                        self.Message("Please specify correct Zoom Range!")
+                        return
+
+                aug = ImageDataGenerator(
+                    featurewise_center=self.checkBox.isChecked(),
+                    zca_whitening=self.checkBox_4.isChecked(),
+                    rotation_range=rotate_range,
+                    width_shift_range=width_shift_range,
+                    height_shift_range=height_shift_range,
+                    shear_range=shear_range,
+                    zoom_range=zoom_range,
+                    fill_mode=self.comboBox.currentText().lower(),
+                    cval=0.0 if self.comboBox.currentText().lower()!='constant' else cval,
+                    horizontal_flip=self.checkBox_3.isChecked(),
+                    vertical_flip=self.checkBox_2.isChecked(),
+                )
+                img_list = [i for i in os.listdir(self.lineEdit.text()) if i.endswith(('.jpg','.jpeg','.webp'))]
+                if len(img_list)>0:
+                    self.progressBar.setMaximum(len(img_list))
+                else:
+                    self.Message("Please specify correct Dataset Folder with Images!")
+                
+            else:
+                self.Message("Please specify correct Dataset folder!")
+        else:
+            self.Message("Please select Dataset folder!")
 
     def Cancel(self):
         self.pushButton_3.setDisabled(False)
@@ -329,14 +429,15 @@ class Ui_MainWindow(object):
         self.checkBox_3.setText(_translate("MainWindow", "Horizontal Flip"))
         self.lineEdit_5.setToolTip(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:<span style=\" font-family:\'Courier New\';\">(-width_shift_range +width_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">width_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).</p></body></html>"))
         self.lineEdit_5.setStatusTip(_translate("MainWindow", "1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:(-width_shift_range +width_shift_range)[-1, 0, +1], while with width_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0)."))
-        self.lineEdit_5.setText(_translate("MainWindow", "0.2"))
+        self.lineEdit_5.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:<span style=\" font-family:\'Courier New\';\">(-width_shift_range +width_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">width_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).</p></body></html>"))
+        self.lineEdit_5.setText(_translate("MainWindow", "0.0"))
         self.label_6.setToolTip(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-height_shift_range, +height_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">height_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
         self.label_6.setStatusTip(_translate("MainWindow", "1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval (-height_shift_range, +height_shift_range)[-1, 0, +1], while with height_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).(Float)"))
-        self.label_6.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total height, if &lt; 1, or pixels if &gt;= 1. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-height_shift_range, +height_shift_range)</span> - With <span style=\" font-family:\'Courier New\';\">height_shift_range=2</span> possible values are integers <span style=\" font-family:\'Courier New\';\">[-1, 0, +1]</span>, same as with <span style=\" font-family:\'Courier New\';\">height_shift_range=[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">height_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
+        self.label_6.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-height_shift_range, +height_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">height_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
         self.label_6.setText(_translate("MainWindow", "Height Shift Range:-"))
         self.label_5.setToolTip(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:<span style=\" font-family:\'Courier New\';\">(-width_shift_range +width_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">width_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).</p></body></html>"))
         self.label_5.setStatusTip(_translate("MainWindow", "1-D array-like or int - float. - 1-D array-like: random elements from the array. - int:(-width_shift_range +width_shift_range)[-1, 0, +1], while with width_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0)."))
-        self.label_5.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total width, if &lt; 1, or pixels if &gt;= 1. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-width_shift_range, +width_shift_range)</span> - With <span style=\" font-family:\'Courier New\';\">width_shift_range=2</span> possible values are integers <span style=\" font-family:\'Courier New\';\">[-1, 0, +1]</span>, same as with <span style=\" font-family:\'Courier New\';\">width_shift_range=[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">width_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
+        self.label_5.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:<span style=\" font-family:\'Courier New\';\">(-width_shift_range +width_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">width_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).</p></body></html>"))
         self.label_5.setText(_translate("MainWindow", "Width Shift Range:-"))
         self.label_3.setToolTip(_translate("MainWindow", "<html><head/><body><p>Value used for points outside the boundaries when <span style=\" font-family:\'Courier New\';\">fill_mode = &quot;constant&quot;</span>. (Float or Int) </p></body></html>"))
         self.label_3.setStatusTip(_translate("MainWindow", "Value used for points outside the boundaries when fill_mode = \"constant\". (Float or Int) "))
@@ -344,11 +445,12 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "CVal:-"))
         self.label_8.setToolTip(_translate("MainWindow", "<html><head/><body><p>One of {&quot;constant&quot;, &quot;nearest&quot;, &quot;reflect&quot; or &quot;wrap&quot;}. Default is \'nearest\'. Points outside the boundaries of the input are filled according to the given mode: - \'constant\': kkkkkkkk|abcd|kkkkkkkk (cval=k) - \'nearest\': aaaaaaaa|abcd|dddddddd - \'reflect\': abcddcba|abcd|dcbaabcd - \'wrap\': abcdabcd|abcd|abcdabcd</p></body></html>"))
         self.label_8.setStatusTip(_translate("MainWindow", "One of {\"constant\", \"nearest\", \"reflect\" or \"wrap\"}. Default is \'nearest\'. Points outside the boundaries of the input are filled according to the given mode: - \'constant\': kkkkkkkk|abcd|kkkkkkkk (cval=k) - \'nearest\': aaaaaaaa|abcd|dddddddd - \'reflect\': abcddcba|abcd|dcbaabcd - \'wrap\': abcdabcd|abcd|abcdabcd"))
-        self.label_8.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Float or [lower, upper]. Range for random zoom. If a float, <span style=\" font-family:\'Courier New\';\">[lower, upper] = [1-zoom_range, 1+zoom_range]</span>.</p></body></html>"))
+        self.label_8.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>One of {&quot;constant&quot;, &quot;nearest&quot;, &quot;reflect&quot; or &quot;wrap&quot;}. Default is \'nearest\'. Points outside the boundaries of the input are filled according to the given mode: - \'constant\': kkkkkkkk|abcd|kkkkkkkk (cval=k) - \'nearest\': aaaaaaaa|abcd|dddddddd - \'reflect\': abcddcba|abcd|dcbaabcd - \'wrap\': abcdabcd|abcd|abcdabcd</p></body></html>"))
         self.label_8.setText(_translate("MainWindow", "Fill Mode:-"))
         self.lineEdit_4.setToolTip(_translate("MainWindow", "<html><head/><body><p>Float or [lower, upper]. Range for random zoom. If a float, <span style=\" font-family:\'Courier New\';\">[lower, upper] = [1-zoom_range, 1+zoom_range]</span>.</p></body></html>"))
         self.lineEdit_4.setStatusTip(_translate("MainWindow", "Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range]."))
-        self.lineEdit_4.setText(_translate("MainWindow", "0.15"))
+        self.lineEdit_4.setWhatsThis(_translate("MainWindow", "Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range]."))
+        self.lineEdit_4.setText(_translate("MainWindow", "0.0"))
         self.label_4.setToolTip(_translate("MainWindow", "<html><head/><body><p>Float or [lower, upper]. Range for random zoom. If a float, <span style=\" font-family:\'Courier New\';\">[lower, upper] = [1-zoom_range, 1+zoom_range]</span>.</p></body></html>"))
         self.label_4.setStatusTip(_translate("MainWindow", "Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range]."))
         self.label_4.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Float or [lower, upper]. Range for random zoom. If a float, <span style=\" font-family:\'Courier New\';\">[lower, upper] = [1-zoom_range, 1+zoom_range]</span>.</p></body></html>"))
@@ -359,14 +461,15 @@ class Ui_MainWindow(object):
         self.label_7.setText(_translate("MainWindow", "Shear Range:-"))
         self.lineEdit_7.setToolTip(_translate("MainWindow", "<html><head/><body><p>Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)</p></body></html>"))
         self.lineEdit_7.setStatusTip(_translate("MainWindow", "Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)"))
-        self.lineEdit_7.setText(_translate("MainWindow", "0.15"))
+        self.lineEdit_7.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)</p></body></html>"))
+        self.lineEdit_7.setText(_translate("MainWindow", "0.0"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Nearest"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Constant"))
         self.comboBox.setItemText(2, _translate("MainWindow", "Reflect"))
         self.comboBox.setItemText(3, _translate("MainWindow", "Wrap"))
         self.lineEdit_6.setToolTip(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-height_shift_range, +height_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">height_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
         self.lineEdit_6.setStatusTip(_translate("MainWindow", "1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval (-height_shift_range, +height_shift_range)[-1, 0, +1], while with height_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).(Float)"))
-        self.lineEdit_6.setText(_translate("MainWindow", "0.2"))
+        self.lineEdit_6.setText(_translate("MainWindow", "0.0"))
         self.label_2.setToolTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
         self.label_2.setStatusTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
         self.label_2.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Degree range for random rotations.(Integer)</p></body></html>"))
@@ -376,13 +479,14 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setText(_translate("MainWindow", "0.0"))
         self.lineEdit_2.setToolTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
         self.lineEdit_2.setStatusTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
-        self.lineEdit_2.setText(_translate("MainWindow", "30"))
+        self.lineEdit_2.setText(_translate("MainWindow", "0"))
         self.label_9.setToolTip(_translate("MainWindow", "<html><head/><body><p>Range from 1 to 50. Default 10</p></body></html>"))
         self.label_9.setStatusTip(_translate("MainWindow", "Range from 1 to 50. Default 10"))
         self.label_9.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Range from 1 to 50. Default 10</p></body></html>"))
         self.label_9.setText(_translate("MainWindow", "Max number of images per Images:-"))
         self.spinBox.setToolTip(_translate("MainWindow", "Range from 1 to 50. Default 10"))
         self.spinBox.setStatusTip(_translate("MainWindow", "Range from 1 to 50. Default 10"))
+        self.spinBox.setWhatsThis(_translate("MainWindow", "Range from 1 to 50. Default 10"))
         self.label_10.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Degree range for random rotations.(Integer)</p></body></html>"))
         self.label_10.setText(_translate("MainWindow", "Destination Folder:-"))
         self.pushButton_2.setText(_translate("MainWindow", "Browse"))
@@ -391,9 +495,9 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "Browse"))
         self.label_11.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Degree range for random rotations.(Integer)</p></body></html>"))
         self.label_11.setText(_translate("MainWindow", "Select Dataset Folder:-"))
+        self.label.setText(_translate("MainWindow", "Total Progress:-"))
         self.menuHelp.setTitle(_translate("MainWindow", "Help"))
         self.actionAbout.setText(_translate("MainWindow", "About"))
-
 
 if __name__ == "__main__":
     import sys
