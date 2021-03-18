@@ -1,8 +1,10 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog,QMessageBox
 import os
+import PIL
 from tensorflow.keras.preprocessing.image import ImageDataGenerator,load_img,img_to_array
 import numpy as np
+import scipy
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -280,7 +282,7 @@ class Ui_MainWindow(object):
             self.pushButton.setDisabled(True)
             self.pushButton_2.setDisabled(False)
             self.lineEdit_8.setDisabled(False)
-            self.lineEdit_8.setText(self.lineEdit_8.text()+'/'+self.lineEdit.text().split('/')[-1])
+            self.lineEdit_8.setText(self.lineEdit_8.text()+'/'+self.lineEdit.text().split('/')[-1].capitalize())
 
     def getFolder_1(self):
         dialog = QFileDialog()
@@ -288,9 +290,7 @@ class Ui_MainWindow(object):
         if foo_dir=='':
             self.Message("Please select Dataset folder!")
         else:
-            self.lineEdit_8.setText(foo_dir+'/'+self.lineEdit.text().split('/')[-1])
-
-    
+            self.lineEdit_8.setText(foo_dir+'/'+self.lineEdit.text().split('/')[-1].capitalize())
 
     def Apply(self):
         self.pushButton_3.setDisabled(True)
@@ -303,11 +303,6 @@ class Ui_MainWindow(object):
         if not os.path.isdir('generated_images'):
             os.mkdir('generated_images')
 
-        # for i in range(1,10001):
-        #     self.progressBar.setMaximum(10000)
-        #     self.progressBar.setFormat("%p%, %v/%m")
-        #     self.progressBar.setValue(i)
-        # self.plainTextEdit.appendPlainText('Hello')
         if self.lineEdit.text()!='':
             if os.path.isdir(self.lineEdit.text()):
                 try:
@@ -382,9 +377,46 @@ class Ui_MainWindow(object):
                     horizontal_flip=self.checkBox_3.isChecked(),
                     vertical_flip=self.checkBox_2.isChecked(),
                 )
+                self.plainTextEdit.appendPlainText('Rotation Range:-'+ str(rotate_range))
+                self.plainTextEdit.appendPlainText('Width Shift Range:-'+str(width_shift_range))
+                self.plainTextEdit.appendPlainText('Height Shift Range:-'+str(height_shift_range))
+                self.plainTextEdit.appendPlainText('Shear Range:-'+str(shear_range))
+                self.plainTextEdit.appendPlainText('Zoom Range:-'+str(zoom_range))
+                self.plainTextEdit.appendPlainText('Horizontal Flip:-'+str(self.checkBox_3.isChecked()))
+                self.plainTextEdit.appendPlainText('Vertical Flip:-'+str(self.checkBox_2.isChecked()))
+                
                 img_list = [i for i in os.listdir(self.lineEdit.text()) if i.endswith(('.jpg','.jpeg','.webp'))]
                 if len(img_list)>0:
+                    if self.lineEdit_8.text().startswith('./generated_images'):
+                        path = 'generated_images/'+self.lineEdit.text().split('/')[-1].capitalize()
+                    else:
+                        path = self.lineEdit_8.text()
+                    try:
+                        os.mkdir(path)
+                    except FileExistsError:
+                        pass
                     self.progressBar.setMaximum(len(img_list))
+
+                    for i,j in enumerate(img_list):
+                        image = load_img(self.lineEdit.text()+'/'+ j)
+                        image = img_to_array(image)
+                        image = np.expand_dims(image, axis=0)
+                        self.plainTextEdit.appendPlainText("[INFO] generating images for "+j)
+                        imageGen = aug.flow(image, batch_size=32, save_to_dir=path,
+                            save_prefix="image", save_format="jpg")
+                        self.progressBar.setMaximum(len(img_list))
+                        self.progressBar.setFormat("%p%, %v/%m")
+                        self.progressBar.setValue(i)
+                        total = 0
+                        print("[INFO] generating images for "+j)
+                        for image in imageGen:
+                            total += 1
+                            if total == int(self.spinBox.text()):
+                                break
+                    self.progressBar.setMaximum(len(img_list))
+                    self.progressBar.setFormat("%p%, %v/%m")
+                    self.progressBar.setValue(len(img_list)) 
+                    self.pushButton_3.setDisabled(False)               
                 else:
                     self.Message("Please specify correct Dataset Folder with Images!")
                 
@@ -430,7 +462,7 @@ class Ui_MainWindow(object):
         self.lineEdit_5.setToolTip(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:<span style=\" font-family:\'Courier New\';\">(-width_shift_range +width_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">width_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).</p></body></html>"))
         self.lineEdit_5.setStatusTip(_translate("MainWindow", "1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:(-width_shift_range +width_shift_range)[-1, 0, +1], while with width_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0)."))
         self.lineEdit_5.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float: fraction of total width. - 1-D array-like: random elements from the array. - int:<span style=\" font-family:\'Courier New\';\">(-width_shift_range +width_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">width_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).</p></body></html>"))
-        self.lineEdit_5.setText(_translate("MainWindow", "0.0"))
+        self.lineEdit_5.setText(_translate("MainWindow", "0.2"))
         self.label_6.setToolTip(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-height_shift_range, +height_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">height_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
         self.label_6.setStatusTip(_translate("MainWindow", "1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval (-height_shift_range, +height_shift_range)[-1, 0, +1], while with height_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).(Float)"))
         self.label_6.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-height_shift_range, +height_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">height_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
@@ -450,7 +482,7 @@ class Ui_MainWindow(object):
         self.lineEdit_4.setToolTip(_translate("MainWindow", "<html><head/><body><p>Float or [lower, upper]. Range for random zoom. If a float, <span style=\" font-family:\'Courier New\';\">[lower, upper] = [1-zoom_range, 1+zoom_range]</span>.</p></body></html>"))
         self.lineEdit_4.setStatusTip(_translate("MainWindow", "Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range]."))
         self.lineEdit_4.setWhatsThis(_translate("MainWindow", "Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range]."))
-        self.lineEdit_4.setText(_translate("MainWindow", "0.0"))
+        self.lineEdit_4.setText(_translate("MainWindow", "0.15"))
         self.label_4.setToolTip(_translate("MainWindow", "<html><head/><body><p>Float or [lower, upper]. Range for random zoom. If a float, <span style=\" font-family:\'Courier New\';\">[lower, upper] = [1-zoom_range, 1+zoom_range]</span>.</p></body></html>"))
         self.label_4.setStatusTip(_translate("MainWindow", "Float or [lower, upper]. Range for random zoom. If a float, [lower, upper] = [1-zoom_range, 1+zoom_range]."))
         self.label_4.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Float or [lower, upper]. Range for random zoom. If a float, <span style=\" font-family:\'Courier New\';\">[lower, upper] = [1-zoom_range, 1+zoom_range]</span>.</p></body></html>"))
@@ -462,14 +494,14 @@ class Ui_MainWindow(object):
         self.lineEdit_7.setToolTip(_translate("MainWindow", "<html><head/><body><p>Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)</p></body></html>"))
         self.lineEdit_7.setStatusTip(_translate("MainWindow", "Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)"))
         self.lineEdit_7.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Shear Intensity (Shear angle in counter-clockwise direction in degrees).(Float)</p></body></html>"))
-        self.lineEdit_7.setText(_translate("MainWindow", "0.0"))
+        self.lineEdit_7.setText(_translate("MainWindow", "0.15"))
         self.comboBox.setItemText(0, _translate("MainWindow", "Nearest"))
         self.comboBox.setItemText(1, _translate("MainWindow", "Constant"))
         self.comboBox.setItemText(2, _translate("MainWindow", "Reflect"))
         self.comboBox.setItemText(3, _translate("MainWindow", "Wrap"))
         self.lineEdit_6.setToolTip(_translate("MainWindow", "<html><head/><body><p>1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval <span style=\" font-family:\'Courier New\';\">(-height_shift_range, +height_shift_range)[-1, 0, +1]</span>, while with <span style=\" font-family:\'Courier New\';\">height_shift_range=1.0</span> possible values are floats in the interval [-1.0, +1.0).(Float)</p></body></html>"))
         self.lineEdit_6.setStatusTip(_translate("MainWindow", "1-D array-like or int - float. - 1-D array-like: random elements from the array. - int: integer number of pixels from interval (-height_shift_range, +height_shift_range)[-1, 0, +1], while with height_shift_range=1.0 possible values are floats in the interval [-1.0, +1.0).(Float)"))
-        self.lineEdit_6.setText(_translate("MainWindow", "0.0"))
+        self.lineEdit_6.setText(_translate("MainWindow", "0.2"))
         self.label_2.setToolTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
         self.label_2.setStatusTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
         self.label_2.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Degree range for random rotations.(Integer)</p></body></html>"))
@@ -479,7 +511,7 @@ class Ui_MainWindow(object):
         self.lineEdit_3.setText(_translate("MainWindow", "0.0"))
         self.lineEdit_2.setToolTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
         self.lineEdit_2.setStatusTip(_translate("MainWindow", "Degree range for random rotations.(Integer)"))
-        self.lineEdit_2.setText(_translate("MainWindow", "0"))
+        self.lineEdit_2.setText(_translate("MainWindow", "30"))
         self.label_9.setToolTip(_translate("MainWindow", "<html><head/><body><p>Range from 1 to 50. Default 10</p></body></html>"))
         self.label_9.setStatusTip(_translate("MainWindow", "Range from 1 to 50. Default 10"))
         self.label_9.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>Range from 1 to 50. Default 10</p></body></html>"))
